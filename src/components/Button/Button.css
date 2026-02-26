@@ -1,17 +1,18 @@
+.btn {
+  text-decoration: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
 .btn-primary {
   padding: 0.75rem 1.25rem;
-  font-size: 1rem;
-  border: none;
   border-radius: 10px;
   background-color: #222529;
-  cursor: pointer;
   color: #eee;
 }
 
 .btn-primary:hover {
   background-color: #33363a;
-}
-
-.btn-primary:active {
-  background-color: #44484e;
 }

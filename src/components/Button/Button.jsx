@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./Button.css";
 
 export default function Button({ children, to, onClick, type = "button", variant = "primary"}) {
-  const className = `btn-${variant}`;
+  const className = `btn btn-${variant}`;
 
   // If "to" exists, render Link
   if (to) {
