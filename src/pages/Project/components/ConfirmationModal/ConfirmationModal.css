@@ -1,0 +1,40 @@
+dialog {
+  border: none;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background-color: #eee;
+  margin: auto;
+}
+
+dialog[open] {
+  animation: slide-in-from-top 0.35s ease-out;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+dialog p {
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+dialog form {
+  text-align: right;
+}
+
+dialog .btn {
+  margin-left: 0.75rem;
+}
+
+@keyframes slide-in-from-top {
+  0% {
+    transform: translateY(-15%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
