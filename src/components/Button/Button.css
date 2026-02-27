@@ -8,14 +8,36 @@
   display: inline-block;
 }
 
-.btn-primary {
-  padding: 0.75rem 1.25rem;
+.btn-primary,
+.btn-outline {
+  padding: 0.65rem 1.15rem;
   border-radius: 10px;
+  border: 2px solid #222529;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
   background-color: #222529;
   color: #eee;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary:hover {
   background-color: #33363a;
+}
+
+.btn-secondary {
+  color: #222529;
+}
+
+.btn-secondary:hover {
+  color: #888;
+}
+
+.btn-outline {
+  color: #222529;
+}
+
+.btn-outline:hover {
+  background-color: #222529;
+  color: #eee;
 }
