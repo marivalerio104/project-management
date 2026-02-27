@@ -1,0 +1,11 @@
+#project {
+  padding: 2rem;
+  max-width: 65rem;
+  margin: auto;
+}
+
+#project header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
