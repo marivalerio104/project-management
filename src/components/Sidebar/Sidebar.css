@@ -1,4 +1,32 @@
 nav {
-  background-color: aqua;
+  background-color: #222529;
   width: 15rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 1.25rem;
+}
+
+nav h2 {
+  color: #eee;
+  margin-bottom: 1rem;
+}
+
+nav .btn {
+  margin-bottom: 1rem;
+}
+
+nav a {
+  color: #bbb;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 7px;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+nav a.active {
+  color: #eee;
+  background-color: #33363a;
 }

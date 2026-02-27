@@ -3,11 +3,11 @@ import { Outlet } from "react-router-dom";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Footer from "../components/Footer/Footer";
 
-export default function Layout() {
+export default function Layout( { projects }) {
   return <>
     <div id="content">
-      <Sidebar />
-      <main><Outlet className="main-content" /></main>
+      <Sidebar projects={projects} />
+      <main><Outlet /></main>
     </div>
     <Footer />
   </>;
