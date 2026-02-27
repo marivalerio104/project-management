@@ -44,7 +44,7 @@ export default function App() {
     <Routes>
       <Route element={<Layout projects={projects} />}>
         <Route path="/" element={<Home />} />
-        <Route path="/project/new" element={<NewProject />} />
+        <Route path="/project/new" element={<NewProject setProjects={setProjects} />} />
         {/* <Route path="/project/:id" element={<Project />} /> */}
       </Route>
     </Routes>
