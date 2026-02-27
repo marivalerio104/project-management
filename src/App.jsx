@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import Layout from './layouts/Layout';
 import Home from './pages/Home/Home';
 import NewProject from './pages/NewProject/NewProject';
@@ -40,13 +41,16 @@ export default function App() {
     }
   ]);
 
-  return <BrowserRouter>
-    <Routes>
-      <Route element={<Layout projects={projects} />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/project/new" element={<NewProject setProjects={setProjects} />} />
-        {/* <Route path="/project/:id" element={<Project />} /> */}
-      </Route>
-    </Routes>
-  </BrowserRouter>
+  return <>
+    <ToastContainer toastClassName="custom-toast" draggable theme="dark"/>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout projects={projects} />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/project/new" element={<NewProject setProjects={setProjects} />} />
+          {/* <Route path="/project/:id" element={<Project />} /> */}
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </>
 }

@@ -7,3 +7,9 @@
 #content {
   display: flex;
 }
+
+.custom-toast {
+  background-color: #222529;
+  color: #eee;
+  font-family: inherit;
+}

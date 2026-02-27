@@ -1,6 +1,7 @@
 import "./NewProject.css";
 import Button from "../../components/Button/Button";
 import { v4 as uuidv4 } from 'uuid';
+import { toast } from 'react-toastify';
 import { useState } from "react";
 
 export default function NewProject({ setProjects }) {
@@ -19,6 +20,7 @@ export default function NewProject({ setProjects }) {
   function handleSubmit(e) {
     e.preventDefault();
     setProjects(prev => [...prev, { ...newProject, id: uuidv4() }]);
+    toast.success("Project created successfully!");
   }
 
   return <form id="new-project" onSubmit={handleSubmit}>
