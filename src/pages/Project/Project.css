@@ -7,5 +7,22 @@
 #project header {
   display: flex;
   justify-content: space-between;
+}
+
+#project h2 {
+  font-size: 2rem;
+}
+
+#project p,
+#project header {
   margin-bottom: 1rem;
+}
+
+#project #due-date {
+  color: #666;
+}
+
+#project h3 {
+  margin: 1rem 0;
+  font-size: 1.5rem;
 }

@@ -22,11 +22,13 @@
 }
 
 .btn-primary:hover {
-  background-color: #33363a;
+  background-color: #404448;
+  border-color: #404448;
 }
 
 .btn-secondary {
   color: #222529;
+  background-color: transparent;
 }
 
 .btn-secondary:hover {
@@ -35,6 +37,7 @@
 
 .btn-outline {
   color: #222529;
+  background-color: transparent;
 }
 
 .btn-outline:hover {

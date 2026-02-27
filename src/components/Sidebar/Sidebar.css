@@ -21,6 +21,7 @@ nav a {
   text-decoration: none;
   padding: 0.5rem;
   border-radius: 7px;
+  overflow-wrap: break-word;
 }
 
 nav a:hover {
