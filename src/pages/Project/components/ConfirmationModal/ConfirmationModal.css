@@ -1,7 +1,7 @@
 dialog {
   border: none;
   border-radius: 8px;
-  padding: 1.5rem;
+  padding: 1.25rem;
   background-color: #eee;
   margin: auto;
 }
@@ -15,7 +15,7 @@ dialog::backdrop {
 }
 
 dialog p {
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
   font-size: 1.2rem;
 }
 
@@ -24,7 +24,7 @@ dialog form {
 }
 
 dialog .btn {
-  margin-left: 0.75rem;
+  margin-left: 0.5rem;
 }
 
 @keyframes slide-in-from-top {
