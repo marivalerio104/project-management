@@ -7,6 +7,6 @@ export default function Home() {
     <img src={logo} alt="Project Management Logo" />
     <h2>No Project Selected</h2>
     <p>Select a project or get started with a new one.</p>
-    <Button>Create Project</Button>
+    <Button to="/project/new">Create Project</Button>
   </div>
 }

@@ -1,0 +1,38 @@
+#new-project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 3rem;
+  color: #232529;
+}
+
+#new-project h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+#new-project .input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+#new-project label {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+#new-project input,
+#new-project textarea {
+  padding: 0.4rem;
+  font-size: 1rem;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#new-project button {
+  align-self: flex-end;
+}

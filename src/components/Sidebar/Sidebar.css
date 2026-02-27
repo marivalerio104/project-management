@@ -13,6 +13,7 @@ nav h2 {
 
 nav .btn {
   margin-bottom: 1rem;
+  box-shadow: none;
 }
 
 nav a {
