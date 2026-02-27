@@ -1,4 +1,5 @@
 import "./Project.css";
+import Tasks from "./components/Tasks/Tasks";
 import Button from "../../components/Button/Button";
 import ConfirmationModal from "./components/ConfirmationModal/ConfirmationModal";
 import { useRef } from 'react';
@@ -6,9 +7,11 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 export default function Project({ projects, setProjects }) {
-  const navigate = useNavigate();
   const { id } = useParams();
-  const { name, description, dueDate, tasks } = projects.find(p => p.id === id);
+  const project = projects.find(p => p.id === id);
+  if (!project) return <p>Project not found</p>;
+  const { name, description, dueDate, tasks } = project;
+  const navigate = useNavigate();
   const confirmationModal = useRef();
 
   function handleDeleteProject() {
@@ -25,16 +28,10 @@ export default function Project({ projects, setProjects }) {
           Delete
         </Button>
       </header>
-      <p>Due date: {dueDate}</p>
-      <p>{description}</p>
+      {dueDate && <p id="due-date">Due date: {dueDate}</p>}
+      <p id="description">{description}</p>
       <hr />
-      <h3>Tasks</h3>
-      <ul>
-        {tasks.map(task => <li key={task.id}>
-          {task.task}
-
-        </li>)}
-      </ul>
+      <Tasks tasks={tasks} setProjects={setProjects} projectId={id} />
     </div>
 
     <ConfirmationModal ref={confirmationModal} onConfirm={handleDeleteProject}
