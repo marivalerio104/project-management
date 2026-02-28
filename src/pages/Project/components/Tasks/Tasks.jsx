@@ -43,7 +43,7 @@ export default function Tasks({ tasks, setProjects, projectId }) {
   }
 
   return <>
-    <div id="tasks">
+    <section id="tasks">
       <h3>Tasks</h3>
       <form onSubmit={handleAddTask}>
         <Input placeholder="Write a new task" id="new-task" required 
@@ -62,10 +62,10 @@ export default function Tasks({ tasks, setProjects, projectId }) {
             </li>)}
         </ul>
       }
-    </div>
+    </section>
 
-    <ConfirmationModal ref={confirmationModal} onConfirm={handleClear}
-      description="Are you sure you want to clear the task?"
-    />
+    <ConfirmationModal ref={confirmationModal} onConfirm={handleClear}>
+      Are you sure you want to clear the task?
+    </ConfirmationModal>
   </>
 }

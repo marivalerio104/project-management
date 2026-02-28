@@ -11,6 +11,8 @@ export default function Project({ projects, setProjects }) {
   const project = projects.find(p => p.id === id);
   if (!project) return <Navigate to="/" replace />;
   const { name, description, dueDate, tasks } = project;
+  const formattedDate = new Date(dueDate).toLocaleDateString(undefined, 
+    {year: "numeric", month: "short", day: "numeric"});
   const confirmationModal = useRef();
   const navigate = useNavigate();
 
@@ -28,14 +30,14 @@ export default function Project({ projects, setProjects }) {
           Delete
         </Button>
       </header>
-      {dueDate && <p id="due-date">Due date: {dueDate}</p>}
+      {dueDate && <p id="due-date">Due date: {formattedDate}</p>}
       <p id="description">{description}</p>
       <hr />
       <Tasks tasks={tasks} setProjects={setProjects} projectId={id} />
     </div>
 
-    <ConfirmationModal ref={confirmationModal} onConfirm={handleDeleteProject}
-      description="Are you sure you want to delete this project?"
-    />
+    <ConfirmationModal ref={confirmationModal} onConfirm={handleDeleteProject}>
+      Are you sure you want to delete this project?
+    </ConfirmationModal>
   </>
 }
