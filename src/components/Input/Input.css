@@ -1,10 +1,9 @@
-#input-container {
+.input-container {
   display: flex;
   flex-direction: column;
-  margin-bottom: 2rem;
 }
 
-#input-container label {
+.input-container label {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }
