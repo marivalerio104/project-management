@@ -1,6 +1,6 @@
 #project {
   padding: 2rem;
-  max-width: 65rem;
+  max-width: 43rem;
   margin: auto;
 }
 
@@ -20,9 +20,4 @@
 
 #project #due-date {
   color: #666;
-}
-
-#project h3 {
-  margin: 1rem 0;
-  font-size: 1.5rem;
 }
