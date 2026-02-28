@@ -3,8 +3,10 @@ import Button from "../../components/Button/Button";
 import { v4 as uuidv4 } from 'uuid';
 import { toast } from 'react-toastify';
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";   
 
 export default function NewProject({ setProjects }) {
+  const navigate = useNavigate();
   const [newProject, setNewProject] = useState({
     name: "",
     description: "",
@@ -19,15 +21,17 @@ export default function NewProject({ setProjects }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setProjects(prev => [...prev, { ...newProject, id: uuidv4() }]);
     toast.success("Project created successfully!");
+    const newProjectId = uuidv4();
+    setProjects(prev => [...prev, { ...newProject, id: newProjectId }]);
+    navigate(`/project/${newProjectId}`);
   }
 
   return <form id="new-project" onSubmit={handleSubmit}>
     <h2>NEW PROJECT</h2>
     <div className="input-group">
       <label htmlFor="name">Project Name</label>
-      <input id="name" type="text" required value={newProject.name} onChange={handleChange} />
+      <input id="name" type="text" required value={newProject.name} onChange={handleChange} autoComplete="off" />
     </div>
     <div className="input-group">
       <label htmlFor="description">Project Description</label>
