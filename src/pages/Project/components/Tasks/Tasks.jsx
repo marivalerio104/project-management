@@ -1,12 +1,14 @@
 import "./Tasks.css";
 import { useRef, useState } from 'react';
 import { toast } from 'react-toastify';
-import { v4 as uuidv4 } from 'uuid';
+import { ProjectsContext } from "../../../../store/ProjectsContext";
+import { useContext } from "react";
 import Button from "../../../../components/Button/Button";
 import Input from "../../../../components/Input/Input";
 import ConfirmationModal from "../ConfirmationModal/ConfirmationModal";
 
-export default function Tasks({ tasks, setProjects, projectId }) {
+export default function Tasks({ tasks, projectId }) {
+  const { addTask, deleteTask } = useContext(ProjectsContext);
   const [newTask, setNewTask] = useState("");
   const [selectedTaskId, setSelectedTaskId] = useState();
   const confirmationModal = useRef();
@@ -14,16 +16,8 @@ export default function Tasks({ tasks, setProjects, projectId }) {
   function handleAddTask(e) {
     e.preventDefault();
     toast.success("Task added successfully!");
-    setProjects(prev => prev.map(p =>
-      p.id === projectId ? {
-        ...p, tasks: [...p.tasks, { id: uuidv4(), task: newTask }]
-      } : p
-    ));
+    addTask(projectId, newTask);
     setNewTask("");
-  }
-
-  function handleTaskChange(e) {
-    setNewTask(e.target.value);
   }
 
   function handleClickClear(id) {
@@ -34,12 +28,7 @@ export default function Tasks({ tasks, setProjects, projectId }) {
   function handleClear() {
     toast.success("Task cleared successfully!");
     confirmationModal.current.close();
-    setProjects(prev => prev.map(p =>
-      p.id === projectId ? {
-        ...p, tasks: p.tasks.filter(task => task.id !== selectedTaskId)
-      }
-      : p
-    ));
+    deleteTask(projectId, selectedTaskId);
   }
 
   return <>
@@ -47,7 +36,7 @@ export default function Tasks({ tasks, setProjects, projectId }) {
       <h3>Tasks</h3>
       <form onSubmit={handleAddTask}>
         <Input placeholder="Write a new task" id="new-task" required 
-          onChange={handleTaskChange} value={newTask}
+          onChange={(e) => setNewTask(e.target.value)} value={newTask}
         />
         <Button type="submit" variant="secondary">Add Task</Button>
       </form>
