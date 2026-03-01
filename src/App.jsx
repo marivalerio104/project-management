@@ -20,15 +20,13 @@ export default function App() {
   }, [projects]);
 
   return <>
-    <ToastContainer toastClassName="custom-toast" draggable theme="dark" />
+    <ToastContainer toastClassName="custom-toast" draggable theme="dark"/>
     <BrowserRouter>
       <Routes>
         <Route element={<Layout projects={projects} />}>
-          <Route path="/project-management" element={<Home />} />
-          <Route path="/project-management/project/new"
-            element={<NewProject setProjects={setProjects} />} />
-          <Route path="/project-management/project/:id"
-            element={<Project projects={projects} setProjects={setProjects} />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/project/new" element={<NewProject setProjects={setProjects} />} />
+          <Route path="/project/:id" element={<Project projects={projects} setProjects={setProjects} />} />
         </Route>
       </Routes>
     </BrowserRouter>

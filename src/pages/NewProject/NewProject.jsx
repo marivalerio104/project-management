@@ -25,7 +25,7 @@ export default function NewProject({ setProjects }) {
     toast.success("Project created successfully!");
     const newProjectId = uuidv4();
     setProjects(prev => [...prev, { ...newProject, id: newProjectId }]);
-    navigate(`/project-management/project/${newProjectId}`);
+    navigate(`/project/${newProjectId}`);
   }
 
   return <form id="new-project" onSubmit={handleSubmit}>
