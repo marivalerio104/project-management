@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 export default function Project({ projects, setProjects }) {
   const { id } = useParams();
   const project = projects.find(p => p.id === id);
-  if (!project) return <Navigate to="/" replace />;
+  if (!project) return <Navigate to="/project-management" replace />;
   const { name, description, dueDate, tasks } = project;
   const formattedDate = new Date(dueDate).toLocaleDateString(undefined, 
     {year: "numeric", month: "short", day: "numeric"});
@@ -19,7 +19,7 @@ export default function Project({ projects, setProjects }) {
   function handleDeleteProject() {
     setProjects(prev => prev.filter(p => p.id !== id));
     toast.success("Project deleted successfully.");
-    navigate("/");
+    navigate("/project-management");
   }
 
   return <>
